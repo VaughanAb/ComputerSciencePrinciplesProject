@@ -1,0 +1,51 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content=""width=device-width, intiial-scale="1.0">
+        <title>User Profile</title>
+        <link rel="stylesheet" href="styleconfirm.css">
+       
+    </head>
+    <body>
+        <main>
+            <div class = "display_page">
+                <h1>View the User's Profile</h1>
+                 <p>For Profile Picture, See Bottom of Page</p>  
+                   <script>
+                        const url = localStorage.getItem('my-image');
+                        const img = new Image(180, 180);
+                        img.src = url; 
+                        img.id = "pfp-view";
+                        document.body.appendChild(img);
+
+                   </script>
+                
+                <div id="data"></div>
+                <div class = "output">
+                    <button id="btn" onclick = "window.open('form.html')" onclick = "localStorage.clear()">Create Another Submission</button>
+                    <label for = "btn">Create Another Submission</label>
+                </div>
+            </div>
+            
+        </main>
+        <script>
+            
+            
+            
+            const json = localStorage.getItem('form');
+            const obj = JSON.parse(json);
+            for (key in obj) {
+                    const markup = `
+                <div>
+                    <span>${key}: ${obj[key]}</span>
+                </div>
+                `;
+                document.getElementById('data').innerHTML += markup;
+            }
+            function del() {
+
+            }
+        </script>
+    </body>
+</html>

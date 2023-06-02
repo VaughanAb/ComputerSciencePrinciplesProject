@@ -1,0 +1,136 @@
+
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: BOrder-box;
+}
+.user{
+    padding:10px;
+    width: 100%;
+    height: 100%;
+    background: #455d7a;
+    display: flex;
+    align-items: start;
+    justify-content: left;
+}
+.card{
+    width: 250px;
+    background: #233142;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    color: #333;
+    margin-right:30px;
+    justify-content: center;
+    align-items: center;
+    margin-left:auto;
+
+}
+.card h1{
+    font-weight: 500;
+    color: #e3e3e3;
+}
+.card img{
+    width: 180px;
+    height:180px;
+    border-radius: 50%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.card label{
+    width:200px;
+    margin-right:auto;
+    margin-left:-10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;
+}
+.card:hover .upload-btn{
+    background-color: #fd4141;
+}
+
+.card input{
+    margin-right:auto;
+    
+}
+
+
+#file-el{
+    display:none;
+}
+label{
+    display: block;
+    background: #f95959;
+    color: #e3e3e3;
+    padding: 12px;
+    margin: 10px auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header{
+    display: block;
+    width: page-length;
+    background: #233142;
+    color: #e3e3e3;
+    padding: 20px;
+    cursor: pointer;
+    font-size: xx-large;
+    font-family:'Times New Roman', Times, serif;
+}
+.user input{
+    border-radius: 5px;
+    padding:4px;
+}
+.user p{
+    color:#e3e3e3;
+    padding:2px; 
+    justify-content:center;
+    align-self:center;
+    align-items: center;
+}
+.information {
+    width: 450px;
+    background: #364d68;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    color: #333;
+    height:100%;
+    box-shadow: 0px 8px 16px 0px rgb(0, 0, 0);
+    justify-content:center;
+    align-items:start;
+    margin-right:auto;
+    overflow-y: auto;
+
+}
+.information button{
+    margin-top:15px;
+    width:200px;
+    height:50px;
+    border-radius:5px;
+    background-color:#f95959
+}
+.information title{
+    display:block;
+    color:#e3e3e3;
+    font-size:x-large;
+    margin-bottom:10px;
+
+}
+.display_page {
+    padding:10px;
+    width: 100%;
+    height: 100vh;
+    background: #455d7a;
+    display: flex;
+    align-items: start;
+    justify-content: left;
+}
+.display_page img{
+    border-radius:50%;
+    
+
+}
+.information input{
+    margin-top:-10px;
+}
