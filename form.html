@@ -100,32 +100,51 @@
         
     
     <script>
+
+
         const fileEl = document.getElementById('file-el');
         const btn = document.getElementById('sub_btn')
         
         btn.addEventListener('click', () => {
-            window.location.href = "confirm.html";
 
-        })
+            var newWindow = window.open("confirm.html?id=" + submissionId, "_blank");
+
+        });
         
         fileEl.addEventListener('change', () => {
             const fr = new FileReader();
             fr.readAsDataURL(fileEl.files[0]);
             fr.addEventListener('load', () => {
                 const url = fr.result;
-                localStorage.setItem('my-image', url);
+                localStorage.setItem('my-image' + submissionId, url);
             })
-        })
+        });
+        
+        
+
+        var submissionId = generateUniqueIdentifier();
+        
+        localStorage.setItem('idkey', submissionId);
+
+
         const form = document.querySelector('form');
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const fd = new FormData(form);
             const obj = Object.fromEntries(fd);
             const json = JSON.stringify(obj);
-            localStorage.setItem('form', json);
-            window.location.href = "confirm.html";
-        })
-    
+            localStorage.setItem('form' + submissionId, json);
+            window.close();
+            var newWindow = window.open("confirm.html?id=" + submissionId, "_blank");
+            
+        });
+
+        function generateUniqueIdentifier() {
+            var timestamp = Date.now().toString(36);
+            var randomStr = Math.random().toString(36).substr(2); 
+            return timestamp + randomStr;
+        }
+        
         const imgDiv = document.querySelector('#card');
         const img = document.querySelector('#pfp');
         const file = document.querySelector('#file-el');
@@ -142,7 +161,8 @@
                 reader.readAsDataURL(chosenFile);
 
             }
-        })
+        });
+
     </script>
     </body>
 </html>
